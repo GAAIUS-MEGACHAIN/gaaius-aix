@@ -1,0 +1,69 @@
+2026-01-15 15:08:26,496 - backend.server - INFO - Starting GAAIUS AI Server
+2026-01-15 15:08:29,635 - backend.server - WARNING - Missing optional environment variables (some features will be disabled):
+  - STRIPE_API_KEY (Stripe payment processing)
+2026-01-15 15:08:29,637 - backend.server - INFO - Environment validation passed
+2026-01-15 15:08:29,649 - backend.server - INFO - JWT_SECRET loaded: 45 characters
+2026-01-15 15:08:30,800 - backend.server - INFO - CORS configured for 3 origins
+2026-01-15 15:08:31,040 - backend.server - WARNING - Video engine not available or failed to initialize: No module named 'imageio'
+2026-01-15 15:08:50,791 - backend.server - INFO - Starting GAAIUS AI Server
+2026-01-15 15:08:51,369 - backend.server - WARNING - Missing optional environment variables (some features will be disabled):
+  - STRIPE_API_KEY (Stripe payment processing)
+2026-01-15 15:08:51,370 - backend.server - INFO - Environment validation passed
+2026-01-15 15:08:51,378 - backend.server - INFO - JWT_SECRET loaded: 45 characters
+2026-01-15 15:08:52,397 - backend.server - INFO - CORS configured for 3 origins
+2026-01-15 15:08:52,563 - backend.server - WARNING - Video engine not available or failed to initialize: No module named 'imageio'
+2026-01-15 15:08:59,944 - backend.server - INFO - Starting GAAIUS AI Server
+2026-01-15 15:09:00,585 - backend.server - WARNING - Missing optional environment variables (some features will be disabled):
+  - STRIPE_API_KEY (Stripe payment processing)
+2026-01-15 15:09:00,588 - backend.server - INFO - Environment validation passed
+2026-01-15 15:09:00,600 - backend.server - INFO - JWT_SECRET loaded: 45 characters
+2026-01-15 15:09:01,701 - backend.server - INFO - CORS configured for 3 origins
+2026-01-15 15:09:01,938 - backend.server - WARNING - Video engine not available or failed to initialize: No module named 'imageio'
+2026-01-17 13:09:14,563 - server - INFO - Starting GAAIUS AI Server
+2026-01-17 13:09:15,865 - server - WARNING - Missing optional environment variables (some features will be disabled):
+  - STRIPE_API_KEY (Stripe payment processing)
+2026-01-17 13:09:15,865 - server - INFO - Environment validation passed
+2026-01-17 13:09:15,878 - server - INFO - JWT_SECRET loaded: 45 characters
+2026-01-17 13:09:17,892 - server - INFO - CORS configured for 3 origins
+2026-01-20 15:11:45,894 - server - INFO - Starting GAAIUS AI Server
+2026-01-20 15:11:50,511 - server - WARNING - Core modules not available: attempted relative import with no known parent package. Using legacy configuration.
+2026-01-20 15:11:50,520 - server - WARNING - Analytics engine not available: attempted relative import with no known parent package
+2026-01-20 15:11:50,541 - server - WARNING - Comprehensive Analytics not available: attempted relative import with no known parent package
+2026-01-20 15:11:50,552 - server - WARNING - Premium Features Analytics not available: attempted relative import with no known parent package
+2026-01-20 15:11:50,570 - server - WARNING - Advanced Features Analytics not available: attempted relative import with no known parent package
+2026-01-20 15:11:50,633 - server - WARNING - Missing optional environment variables (some features will be disabled):
+  - STRIPE_API_KEY (Stripe payment processing)
+2026-01-20 15:11:50,707 - server - INFO - Environment validation passed
+2026-01-20 15:11:51,511 - server - INFO - JWT_SECRET loaded: 45 characters
+2026-01-20 15:12:08,741 - server - INFO - CORS configured for 3 origins
+2026-01-20 15:47:49,965 - server - INFO - Starting GAAIUS AI Server
+2026-01-20 15:47:58,017 - server - WARNING - Core modules not available: attempted relative import with no known parent package. Using legacy configuration.
+2026-01-20 15:47:58,020 - server - WARNING - Analytics engine not available: attempted relative import with no known parent package
+2026-01-20 15:47:58,031 - server - WARNING - Comprehensive Analytics not available: attempted relative import with no known parent package
+2026-01-20 15:47:58,044 - server - WARNING - Premium Features Analytics not available: attempted relative import with no known parent package
+2026-01-20 15:47:58,049 - server - WARNING - Advanced Features Analytics not available: attempted relative import with no known parent package
+2026-01-20 15:47:58,132 - server - WARNING - Missing optional environment variables (some features will be disabled):
+  - STRIPE_API_KEY (Stripe payment processing)
+2026-01-20 15:47:58,194 - server - INFO - Environment validation passed
+2026-01-20 15:47:59,340 - server - INFO - JWT_SECRET loaded: 45 characters
+2026-01-20 15:48:15,120 - server - INFO - CORS configured for 3 origins
+2026-01-20 17:00:02,964 - backend.server - INFO - Starting GAAIUS AI Server
+2026-01-20 17:00:06,945 - backend.server - WARNING - Core modules not available: cannot import name 'settings' from 'backend.core.config' (F:\gaaius-aiX\gaaius-ai\backend\core\config.py). Using legacy configuration.
+2026-01-20 17:00:11,880 - backend.server - WARNING - Analytics engine not available: No module named 'streaming_analytics'
+2026-01-20 17:00:12,380 - backend.server - WARNING - Comprehensive Analytics not available: No module named 'comprehensive_analytics'
+2026-01-20 17:00:12,746 - backend.server - WARNING - Premium Features Analytics not available: No module named 'premium_features_analytics'
+2026-01-20 17:00:15,591 - backend.server - WARNING - Missing optional environment variables (some features will be disabled):
+  - STRIPE_API_KEY (Stripe payment processing)
+2026-01-20 17:00:15,607 - backend.server - INFO - Environment validation passed
+2026-01-20 17:00:16,139 - backend.server - INFO - JWT_SECRET loaded: 36 characters
+2026-01-20 17:00:19,988 - backend.server - INFO - CORS configured for 3 origins
+2026-01-22 23:15:25,889 - backend.server - INFO - Starting GAAIUS AI Server
+2026-01-22 23:15:30,742 - backend.server - WARNING - Core modules not available: cannot import name 'settings' from 'backend.core.config' (F:\gaaius-aiX\gaaius-ai\backend\core\config.py). Using legacy configuration.
+2026-01-22 23:15:34,085 - backend.server - WARNING - Analytics engine not available: No module named 'streaming_analytics'
+2026-01-22 23:15:34,238 - backend.server - WARNING - Comprehensive Analytics not available: No module named 'comprehensive_analytics'
+2026-01-22 23:15:34,314 - backend.server - WARNING - Premium Features Analytics not available: No module named 'premium_features_analytics'
+2026-01-22 23:15:34,757 - backend.server - WARNING - Missing optional environment variables (some features will be disabled):
+  - STRIPE_API_KEY (Stripe payment processing)
+2026-01-22 23:15:34,761 - backend.server - INFO - Environment validation passed
+2026-01-22 23:15:35,063 - backend.server - INFO - JWT_SECRET loaded: 36 characters
+2026-01-22 23:15:54,145 - backend.server - INFO - CORS configured for 3 origins

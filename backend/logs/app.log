@@ -1,0 +1,22 @@
+2026-01-20 16:59:15,490 - __main__ - INFO - Starting GAAIUS AI Server
+2026-01-20 16:59:17,790 - __main__ - WARNING - Core modules not available: attempted relative import with no known parent package. Using legacy configuration.
+2026-01-20 16:59:17,807 - __main__ - WARNING - Analytics engine not available: attempted relative import with no known parent package
+2026-01-20 16:59:17,820 - __main__ - WARNING - Comprehensive Analytics not available: attempted relative import with no known parent package
+2026-01-20 16:59:17,830 - __main__ - WARNING - Premium Features Analytics not available: attempted relative import with no known parent package
+2026-01-20 16:59:17,854 - __main__ - WARNING - Advanced Features Analytics not available: attempted relative import with no known parent package
+2026-01-20 16:59:17,868 - __main__ - WARNING - Missing optional environment variables (some features will be disabled):
+  - STRIPE_API_KEY (Stripe payment processing)
+2026-01-20 16:59:17,891 - __main__ - INFO - Environment validation passed
+2026-01-20 16:59:18,346 - __main__ - INFO - JWT_SECRET loaded: 45 characters
+2026-01-20 16:59:24,515 - __main__ - INFO - CORS configured for 3 origins
+2026-01-22 23:40:25,103 - server - INFO - Starting GAAIUS AI Server
+2026-01-22 23:40:25,545 - server - WARNING - Core modules not available: attempted relative import with no known parent package. Using legacy configuration.
+2026-01-22 23:40:25,547 - server - WARNING - Analytics engine not available: attempted relative import with no known parent package
+2026-01-22 23:40:25,553 - server - WARNING - Comprehensive Analytics not available: attempted relative import with no known parent package
+2026-01-22 23:40:25,557 - server - WARNING - Premium Features Analytics not available: attempted relative import with no known parent package
+2026-01-22 23:40:25,559 - server - WARNING - Advanced Features Analytics not available: attempted relative import with no known parent package
+2026-01-22 23:40:25,559 - server - WARNING - Missing optional environment variables (some features will be disabled):
+  - STRIPE_API_KEY (Stripe payment processing)
+2026-01-22 23:40:25,561 - server - INFO - Environment validation passed
+2026-01-22 23:40:25,656 - server - INFO - JWT_SECRET loaded: 45 characters
+2026-01-22 23:40:27,599 - server - INFO - CORS configured for 3 origins

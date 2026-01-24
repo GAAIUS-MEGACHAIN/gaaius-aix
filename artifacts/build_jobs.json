@@ -1,0 +1,28 @@
+{
+  "c7621dd8-b054-438c-b440-09d979ac5fcd": {
+    "job_id": "c7621dd8-b054-438c-b440-09d979ac5fcd",
+    "project_id": "test-app",
+    "status": "queued",
+    "progress": 0,
+    "logs": "",
+    "artifacts": [],
+    "error_message": "",
+    "created_at": "2026-01-23T11:48:27.393936",
+    "started_at": null,
+    "completed_at": null,
+    "duration_seconds": 0
+  },
+  "6d567719-f606-4ebd-96db-ca9db1903ba3": {
+    "job_id": "6d567719-f606-4ebd-96db-ca9db1903ba3",
+    "project_id": "test-app",
+    "status": "queued",
+    "progress": 0,
+    "logs": "",
+    "artifacts": [],
+    "error_message": "",
+    "created_at": "2026-01-23T11:49:39.484842",
+    "started_at": null,
+    "completed_at": null,
+    "duration_seconds": 0
+  }
+}

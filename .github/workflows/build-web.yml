@@ -1,0 +1,137 @@
+name: Build Web Applications
+
+on:
+  workflow_dispatch:
+    inputs:
+      project_name:
+        description: 'Project name'
+        required: true
+      framework:
+        description: 'Framework (react, angular, vue, vite)'
+        required: true
+        default: 'react'
+        type: choice
+        options:
+          - react
+          - angular
+          - vue
+          - vite
+      version:
+        description: 'Version to build'
+        required: true
+        default: '1.0.0'
+      deploy_docker:
+        description: 'Build Docker image'
+        required: true
+        default: false
+        type: boolean
+
+jobs:
+  build-web:
+    name: Build Web Application
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm install
+      
+      - name: Build application
+        run: npm run build
+      
+      - name: Create distribution archive
+        run: |
+          cd dist
+          tar -czf ../${{ inputs.project_name }}-${{ inputs.version }}.tar.gz .
+          cd ..
+          zip -r ${{ inputs.project_name }}-${{ inputs.version }}.zip dist/
+      
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: web-build
+          path: |
+            dist/
+            ${{ inputs.project_name }}-*.tar.gz
+            ${{ inputs.project_name }}-*.zip
+          retention-days: 30
+  
+  build-docker:
+    name: Build Docker Image
+    runs-on: ubuntu-latest
+    if: ${{ inputs.deploy_docker }}
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: Build application
+        run: |
+          npm install
+          npm run build
+      
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+      
+      - name: Build Docker image
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          push: false
+          outputs: type=docker,dest=/tmp/image.tar
+          tags: ${{ inputs.project_name }}:${{ inputs.version }}
+      
+      - name: Upload Docker image
+        uses: actions/upload-artifact@v3
+        with:
+          name: docker-image
+          path: /tmp/image.tar
+          retention-days: 30
+  
+  create-release:
+    name: Create Release
+    needs: [build-web]
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Download artifacts
+        uses: actions/download-artifact@v3
+        with:
+          name: web-build
+      
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            *.tar.gz
+            *.zip
+          tag_name: v${{ inputs.version }}
+          draft: false
+          prerelease: false
+          body: |
+            # Web Application Release
+            
+            Build date: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            
+            ## Artifacts
+            - `${{ inputs.project_name }}-${{ inputs.version }}.tar.gz` - Compressed distribution
+            - `${{ inputs.project_name }}-${{ inputs.version }}.zip` - ZIP archive
+            
+            ## Deployment
+            Extract and serve the `dist/` directory with your web server.
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

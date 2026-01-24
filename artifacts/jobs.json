@@ -1,0 +1,136 @@
+{
+  "9091a640-87b3-4dd7-9b18-93615e9d6fe9": {
+    "job_id": "9091a640-87b3-4dd7-9b18-93615e9d6fe9",
+    "project_id": "test-app-001",
+    "status": "success",
+    "progress": 100,
+    "logs": "[2026-01-22 23:18:22] Starting build for TestApp (v1.0.0)\n[2026-01-22 23:18:22] Framework: tauri\n[2026-01-22 23:18:22] Platforms: windows, macos, linux\n[2026-01-22 23:18:22] \n--- Building for WINDOWS ---\n[2026-01-22 23:18:22] Building Tauri app for windows...\n[2026-01-22 23:18:22] Successfully created: TestApp.exe\n[2026-01-22 23:18:22] \n--- Building for MACOS ---\n[2026-01-22 23:18:22] Building Tauri app for macos...\n[2026-01-22 23:18:22] Successfully created: TestApp.dmg\n[2026-01-22 23:18:22] \n--- Building for LINUX ---\n[2026-01-22 23:18:22] Building Tauri app for linux...\n[2026-01-22 23:18:22] Successfully created: TestApp.AppImage\n[2026-01-22 23:18:22] \nBuild complete. Created 3 artifact(s)\n",
+    "artifacts": [
+      {
+        "artifact_id": "b65c52bb-29b3-4244-9b34-04af71556eaf",
+        "project_id": "test-app-001",
+        "platform": "windows",
+        "file_path": "artifacts\\TestApp.exe",
+        "file_name": "TestApp.exe",
+        "file_size": 32,
+        "mime_type": "application/x-msdownload",
+        "created_at": "2026-01-22T23:18:22.779111"
+      },
+      {
+        "artifact_id": "7e6389e3-33e2-4a27-8297-96923102d28d",
+        "project_id": "test-app-001",
+        "platform": "macos",
+        "file_path": "artifacts\\TestApp.dmg",
+        "file_name": "TestApp.dmg",
+        "file_size": 30,
+        "mime_type": "application/x-apple-diskimage",
+        "created_at": "2026-01-22T23:18:22.802600"
+      },
+      {
+        "artifact_id": "02f1d0c2-bde5-48ed-81d3-83880eac1cfe",
+        "project_id": "test-app-001",
+        "platform": "linux",
+        "file_path": "artifacts\\TestApp.AppImage",
+        "file_name": "TestApp.AppImage",
+        "file_size": 30,
+        "mime_type": "application/x-appimage",
+        "created_at": "2026-01-22T23:18:22.827600"
+      }
+    ],
+    "created_at": "2026-01-22T23:18:22.452423",
+    "completed_at": "2026-01-22T23:18:22.837600"
+  },
+  "a120e72f-e7a5-4df9-bd5b-4619f9659dc5": {
+    "job_id": "a120e72f-e7a5-4df9-bd5b-4619f9659dc5",
+    "project_id": "my-desktop-app",
+    "status": "success",
+    "progress": 100,
+    "logs": "[2026-01-23 00:54:40] Starting build for MyDesktopApp (v1.0.0)\n[2026-01-23 00:54:40] Framework: tauri\n[2026-01-23 00:54:40] Platforms: windows, macos, linux\n[2026-01-23 00:54:40] \n--- Building for WINDOWS ---\n[2026-01-23 00:54:40] Building Tauri app for windows...\n[2026-01-23 00:54:40] Successfully created: MyDesktopApp.exe\n[2026-01-23 00:54:40] \n--- Building for MACOS ---\n[2026-01-23 00:54:40] Building Tauri app for macos...\n[2026-01-23 00:54:40] Successfully created: MyDesktopApp.dmg\n[2026-01-23 00:54:40] \n--- Building for LINUX ---\n[2026-01-23 00:54:40] Building Tauri app for linux...\n[2026-01-23 00:54:40] Successfully created: MyDesktopApp.AppImage\n[2026-01-23 00:54:40] \nBuild complete. Created 3 artifact(s)\n",
+    "artifacts": [
+      {
+        "artifact_id": "6d97ce21-2c02-4f9a-acae-361482d3898e",
+        "project_id": "my-desktop-app",
+        "platform": "windows",
+        "file_path": "artifacts\\MyDesktopApp.exe",
+        "file_name": "MyDesktopApp.exe",
+        "file_size": 37,
+        "mime_type": "application/x-msdownload",
+        "created_at": "2026-01-23T00:54:40.157228"
+      },
+      {
+        "artifact_id": "2e483f8c-2bb6-4476-b014-07d37e80b4a4",
+        "project_id": "my-desktop-app",
+        "platform": "macos",
+        "file_path": "artifacts\\MyDesktopApp.dmg",
+        "file_name": "MyDesktopApp.dmg",
+        "file_size": 35,
+        "mime_type": "application/x-apple-diskimage",
+        "created_at": "2026-01-23T00:54:40.199143"
+      },
+      {
+        "artifact_id": "1d532a75-35ad-47f4-a865-806513f510a9",
+        "project_id": "my-desktop-app",
+        "platform": "linux",
+        "file_path": "artifacts\\MyDesktopApp.AppImage",
+        "file_name": "MyDesktopApp.AppImage",
+        "file_size": 35,
+        "mime_type": "application/x-appimage",
+        "created_at": "2026-01-23T00:54:40.257611"
+      }
+    ],
+    "created_at": "2026-01-23T00:54:40.050535",
+    "completed_at": "2026-01-23T00:54:40.262232"
+  },
+  "7f72021e-9a09-419e-b791-e32602f10dc6": {
+    "job_id": "7f72021e-9a09-419e-b791-e32602f10dc6",
+    "project_id": "my-mobile-app",
+    "status": "success",
+    "progress": 100,
+    "logs": "[2026-01-23 00:54:40] Starting build for MyMobileApp (v2.0.0)\n[2026-01-23 00:54:40] Framework: flutter\n[2026-01-23 00:54:40] Platforms: android, ios\n[2026-01-23 00:54:40] \n--- Building for ANDROID ---\n[2026-01-23 00:54:40] Building Flutter app for android...\n[2026-01-23 00:54:40] Successfully created: MyMobileApp.apk\n[2026-01-23 00:54:40] \n--- Building for IOS ---\n[2026-01-23 00:54:40] Building Flutter app for ios...\n[2026-01-23 00:54:40] Successfully created: MyMobileApp.ipa\n[2026-01-23 00:54:40] \nBuild complete. Created 2 artifact(s)\n",
+    "artifacts": [
+      {
+        "artifact_id": "e6972684-f8ac-4cd6-9f24-172298cb777c",
+        "project_id": "my-mobile-app",
+        "platform": "android",
+        "file_path": "artifacts\\MyMobileApp.apk",
+        "file_name": "MyMobileApp.apk",
+        "file_size": 30,
+        "mime_type": "application/vnd.android.package-archive",
+        "created_at": "2026-01-23T00:54:40.394512"
+      },
+      {
+        "artifact_id": "f7e4fb70-20bf-4282-b2c5-e85457c93b2d",
+        "project_id": "my-mobile-app",
+        "platform": "ios",
+        "file_path": "artifacts\\MyMobileApp.ipa",
+        "file_name": "MyMobileApp.ipa",
+        "file_size": 30,
+        "mime_type": "application/octet-stream",
+        "created_at": "2026-01-23T00:54:40.433930"
+      }
+    ],
+    "created_at": "2026-01-23T00:54:40.296032",
+    "completed_at": "2026-01-23T00:54:40.455917"
+  },
+  "9277f55c-1072-460b-a376-e3b0027cd08b": {
+    "job_id": "9277f55c-1072-460b-a376-e3b0027cd08b",
+    "project_id": "my-web-app",
+    "status": "success",
+    "progress": 100,
+    "logs": "[2026-01-23 00:54:40] Starting build for MyWebApp (v3.0.0)\n[2026-01-23 00:54:40] Framework: react\n[2026-01-23 00:54:40] Platforms: web\n[2026-01-23 00:54:40] \n--- Building for WEB ---\n[2026-01-23 00:54:40] Building web app...\n[2026-01-23 00:54:40] Successfully created: MyWebApp-dist.zip\n[2026-01-23 00:54:40] \nBuild complete. Created 1 artifact(s)\n",
+    "artifacts": [
+      {
+        "artifact_id": "a018b3ae-fabe-47d0-b016-138aa17fd035",
+        "project_id": "my-web-app",
+        "platform": "web",
+        "file_path": "artifacts\\MyWebApp-dist.zip",
+        "file_name": "MyWebApp-dist.zip",
+        "file_size": 25,
+        "mime_type": "application/zip",
+        "created_at": "2026-01-23T00:54:40.623411"
+      }
+    ],
+    "created_at": "2026-01-23T00:54:40.542099",
+    "completed_at": "2026-01-23T00:54:41.026553"
+  }
+}

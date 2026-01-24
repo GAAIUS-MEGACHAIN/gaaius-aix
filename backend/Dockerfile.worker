@@ -1,0 +1,36 @@
+FROM python:3.10-slim
+
+WORKDIR /app
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    ffmpeg \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Create temp directory for transcoding
+RUN mkdir -p /tmp/gaaius && chmod 777 /tmp/gaaius
+
+# Copy backend code
+COPY backend/ /app/backend/
+COPY requirements.txt /app/
+
+# Install Python dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=30s --retries=3 \
+    CMD curl -f http://localhost:9090/health || exit 1
+
+# Set environment defaults
+ENV PYTHONUNBUFFERED=1 \
+    LOG_LEVEL=INFO \
+    CONCURRENCY=2 \
+    MAX_RETRIES=3 \
+    JOB_TIMEOUT_MINUTES=180 \
+    DISK_MIN_GB=10 \
+    HEALTH_CHECK_PORT=9090 \
+    TMP_DIR=/tmp/gaaius
+
+# Run worker
+ENTRYPOINT ["python", "-u", "backend/transcode_worker.py"]
