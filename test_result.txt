@@ -1,0 +1,2 @@
+Node.js: v22.17.0
+npm: npm not found
