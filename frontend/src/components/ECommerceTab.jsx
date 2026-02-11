@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { ShoppingCart, Plus, Package, TrendingUp, DollarSign } from 'lucide-react';
 import axios from 'axios';
-import { toast } from 'soner';
+import { toast } from 'sonner';
 
 const Container = styled.div`
   display: flex;

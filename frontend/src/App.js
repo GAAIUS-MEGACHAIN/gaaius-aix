@@ -15,7 +15,7 @@ import { Input } from "@/components/ui/input";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { 
+import {
   MessageSquare, Image, Video, Mic, MicOff, Send, Plus, Trash2, Volume2,
   Loader2, Sparkles, Zap, Menu, X, Download, User, LogOut, Crown, Music,
   FileCode, FolderOpen, Hammer, Eye, Code, Settings, CreditCard, Edit, Save,
@@ -23,8 +23,8 @@ import {
   Maximize2, Minimize2, Heart, Share2, ShoppingCart, TrendingUp,
   Wand2, FileImage, Film, ListMusic, Search, Play as PlayIcon, SkipBack, SkipForward,
   Volume, Clock, Disc3, Grid, List as ListIcon, Shuffle, Repeat,
-  Podcast, BookOpen, Tv, Gamepad2, Gem, Calendar, Link as LinkIcon, Mail, 
-  Gift, Globe, QrCode, Users, ListVideo, Brain, Zap as Analytics, HardDrive, Gift as DonateIcon, Sparkles
+  Podcast, BookOpen, Tv, Gamepad2, Gem, Calendar, Link as LinkIcon, Mail,
+  Gift as DonateIcon, Globe, QrCode, Users, ListVideo, Brain, Zap as Analytics, HardDrive
 } from "lucide-react";
 import Editor from "@monaco-editor/react";
 import PWAInstallBanner from "@/components/PWAInstallBanner";
@@ -1834,20 +1834,7 @@ ${combinedHtml}`;
             </div>
           )}
 
-          {rightPanelTab === "code" && (                    <Minimize2 className="w-5 h-5" />
-                    <span className="text-sm font-medium">Exit Fullscreen</span>
-                  </button>
-                </div>
-                <iframe
-                  srcDoc={buildPreviewHtml()}
-                  className="w-full h-full border-0"
-                  title="Fullscreen Preview"
-                  sandbox="allow-scripts allow-same-origin"
-                />
-              </div>
-            )}
-            
-            {rightPanelTab === "code" && (
+          {rightPanelTab === "code" && (
               <div className="h-full flex flex-col">
                 <div className="h-8 bg-[#1e1e1e] border-b border-white/10 flex items-center px-2">
                   <span className="text-xs font-mono text-muted-foreground">{activeFile}</span>
@@ -1892,7 +1879,6 @@ ${combinedHtml}`;
           </div>
         </div>
       </div>
-    </div>
   );
 };
 

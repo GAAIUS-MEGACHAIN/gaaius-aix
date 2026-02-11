@@ -477,7 +477,7 @@ const TagsContainer = styled.div`
   flex-wrap: wrap;
 `;
 
-const Tag = styled.span`
+const TagStyled = styled.span`
   display: flex;
   align-items: center;
   gap: 6px;
@@ -1066,7 +1066,7 @@ export default function NewsletterDashboard() {
                         <td>
                           <TagsContainer>
                             {subscriber.tags?.map(tag => (
-                              <Tag key={tag}>{tag}</Tag>
+                              <TagStyled key={tag}>{tag}</TagStyled>
                             ))}
                           </TagsContainer>
                         </td>
@@ -1253,10 +1253,10 @@ export default function NewsletterDashboard() {
               {newCampaign.tags.length > 0 && (
                 <TagsContainer>
                   {newCampaign.tags.map(tag => (
-                    <Tag key={tag}>
+                    <TagStyled key={tag}>
                       {tag}
                       <button onClick={() => removeTag(tag)}>×</button>
-                    </Tag>
+                    </TagStyled>
                   ))}
                 </TagsContainer>
               )}
@@ -1326,10 +1326,10 @@ export default function NewsletterDashboard() {
               {newSubscriber.tags.length > 0 && (
                 <TagsContainer>
                   {newSubscriber.tags.map(tag => (
-                    <Tag key={tag}>
+                    <TagStyled key={tag}>
                       {tag}
                       <button onClick={() => removeSubscriberTag(tag)}>×</button>
-                    </Tag>
+                    </TagStyled>
                   ))}
                 </TagsContainer>
               )}

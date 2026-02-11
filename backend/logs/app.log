@@ -20,3 +20,40 @@
 2026-01-22 23:40:25,561 - server - INFO - Environment validation passed
 2026-01-22 23:40:25,656 - server - INFO - JWT_SECRET loaded: 45 characters
 2026-01-22 23:40:27,599 - server - INFO - CORS configured for 3 origins
+2026-02-10 23:36:14,902 - server - INFO - Starting GAAIUS AI Server
+2026-02-10 23:36:16,047 - server - WARNING - Core modules not available: attempted relative import with no known parent package. Using legacy configuration.
+2026-02-10 23:36:16,057 - server - WARNING - Analytics engine not available: attempted relative import with no known parent package
+2026-02-10 23:36:16,083 - server - WARNING - Comprehensive Analytics not available: attempted relative import with no known parent package
+2026-02-10 23:36:16,190 - server - WARNING - Premium Features Analytics not available: attempted relative import with no known parent package
+2026-02-10 23:36:16,255 - server - WARNING - Advanced Features Analytics not available: attempted relative import with no known parent package
+2026-02-10 23:36:16,279 - server - ERROR - Missing required environment variables:
+  - MONGO_URL (MongoDB connection string)
+  - DB_NAME (MongoDB database name)
+  - JWT_SECRET (JWT signing secret)
+2026-02-10 23:36:16,329 - server - WARNING - Missing optional environment variables (some features will be disabled):
+  - GROQ_API_KEY (Groq API for AI features)
+  - HF_TOKEN (Hugging Face token for models)
+  - PAYPAL_CLIENT_ID (PayPal integration)
+  - STRIPE_API_KEY (Stripe payment processing)
+2026-02-10 23:36:16,361 - server - INFO - Environment validation passed
+2026-02-10 23:36:16,378 - server - ERROR - JWT_SECRET not set in production environment
+2026-02-10 23:38:27,482 - __main__ - INFO - Starting GAAIUS AI Server
+2026-02-10 23:38:27,747 - __main__ - WARNING - Core modules not available: attempted relative import with no known parent package. Using legacy configuration.
+2026-02-10 23:38:27,747 - __main__ - WARNING - Analytics engine not available: attempted relative import with no known parent package
+2026-02-10 23:38:27,748 - __main__ - WARNING - Comprehensive Analytics not available: attempted relative import with no known parent package
+2026-02-10 23:38:27,748 - __main__ - WARNING - Premium Features Analytics not available: attempted relative import with no known parent package
+2026-02-10 23:38:27,749 - __main__ - WARNING - Advanced Features Analytics not available: attempted relative import with no known parent package
+2026-02-10 23:38:27,750 - __main__ - INFO - Environment validation passed
+2026-02-10 23:38:27,999 - __main__ - INFO - JWT_SECRET loaded: 61 characters
+2026-02-10 23:38:33,585 - __main__ - WARNING - Groq client initialization failed: Client.__init__() got an unexpected keyword argument 'proxies'
+2026-02-10 23:38:41,273 - __main__ - INFO - CORS configured for 3 origins
+2026-02-10 23:50:55,424 - server - INFO - Starting GAAIUS AI Server
+2026-02-10 23:50:56,635 - server - WARNING - Core modules not available: attempted relative import with no known parent package. Using legacy configuration.
+2026-02-10 23:50:56,638 - server - WARNING - Analytics engine not available: attempted relative import with no known parent package
+2026-02-10 23:50:56,638 - server - WARNING - Comprehensive Analytics not available: attempted relative import with no known parent package
+2026-02-10 23:50:56,639 - server - WARNING - Premium Features Analytics not available: attempted relative import with no known parent package
+2026-02-10 23:50:56,640 - server - WARNING - Advanced Features Analytics not available: attempted relative import with no known parent package
+2026-02-10 23:50:56,640 - server - INFO - Environment validation passed
+2026-02-10 23:50:57,692 - server - INFO - JWT_SECRET loaded: 61 characters
+2026-02-10 23:51:01,818 - server - WARNING - Groq client initialization failed: Client.__init__() got an unexpected keyword argument 'proxies'
+2026-02-10 23:51:14,454 - server - INFO - CORS configured for 3 origins
