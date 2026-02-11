@@ -1,0 +1,128 @@
+model Team {
+  id          String    @id @default(cuid())
+  name        String    @unique
+  description String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  deletedAt   DateTime?
+  
+  // Relations
+  members     User[]
+  tasks       Task[]
+  files       File[]
+  comments    Comment[]
+  likes       Like[]
+  
+  @@index([name])
+  @@index([createdAt])
+}
+
+model User {
+  id           String    @id @default(cuid())
+  email        String    @unique
+  username     String    @unique
+  passwordHash String
+  role         UserRole  @default(USER)
+  teamId       String?
+  team         Team?     @relation(fields: [teamId], references: [id])
+  avatar       String?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  deletedAt    DateTime?
+  
+  // Relations
+  tasks       Task[]
+  comments    Comment[]
+  likes       Like[]
+  files       File[]
+  
+  @@index([email])
+  @@index([createdAt])
+}
+
+model Task {
+  id          String    @id @default(cuid())
+  title       String
+  description String?
+  dueDate     DateTime?
+  status      TaskStatus  @default(OPEN)
+  userId      String
+  user        User       @relation(fields: [userId], references: [id])
+  teamId      String?
+  team        Team?      @relation(fields: [teamId], references: [id])
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  deletedAt   DateTime?
+  
+  // Relations
+  comments    Comment[]
+  likes       Like[]
+  files       File[]
+  
+  @@index([userId])
+  @@index([teamId])
+  @@index([status])
+  @@index([createdAt])
+}
+
+enum TaskStatus {
+  OPEN
+  IN_PROGRESS
+  DONE
+  CANCELED
+}
+
+model Comment {
+  id          String    @id @default(cuid())
+  text        String
+  taskId      String
+  task        Task     @relation(fields: [taskId], references: [id])
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  deletedAt   DateTime?
+  
+  @@index([taskId])
+  @@index([userId])
+}
+
+model Like {
+  id          String    @id @default(cuid())
+  taskId      String
+  task        Task     @relation(fields: [taskId], references: [id])
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  deletedAt   DateTime?
+  
+  @@index([taskId])
+  @@index([userId])
+}
+
+model File {
+  id          String    @id @default(cuid())
+  name        String
+  type        String
+  size        Int
+  taskId      String
+  task        Task     @relation(fields: [taskId], references: [id])
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  deletedAt   DateTime?
+  
+  @@index([taskId])
+  @@index([userId])
+}
+
+enum UserRole {
+  USER
+  TEAM_LEAD
+  ADMIN
+}
+```
+
+###

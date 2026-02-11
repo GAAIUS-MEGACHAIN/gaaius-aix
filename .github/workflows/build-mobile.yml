@@ -1,0 +1,239 @@
+name: Build Mobile Applications
+
+on:
+  workflow_dispatch:
+    inputs:
+      project_name:
+        description: 'Project name'
+        required: true
+      framework:
+        description: 'Framework (flutter, react-native)'
+        required: true
+        default: 'flutter'
+        type: choice
+        options:
+          - flutter
+          - react-native
+      version:
+        description: 'Version to build'
+        required: true
+        default: '1.0.0'
+      build_apk:
+        description: 'Build Android APK'
+        required: true
+        default: true
+        type: boolean
+      build_ios:
+        description: 'Build iOS App'
+        required: true
+        default: true
+        type: boolean
+
+jobs:
+  build-android-apk:
+    name: Build Android APK
+    runs-on: ubuntu-latest
+    if: ${{ inputs.build_apk }}
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '11'
+      
+      - name: Setup Flutter
+        if: ${{ inputs.framework == 'flutter' }}
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 'stable'
+          cache: true
+      
+      - name: Setup Node.js
+        if: ${{ inputs.framework == 'react-native' }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: Flutter - Get dependencies
+        if: ${{ inputs.framework == 'flutter' }}
+        run: flutter pub get
+      
+      - name: Flutter - Build APK
+        if: ${{ inputs.framework == 'flutter' }}
+        run: flutter build apk --release --split-per-abi
+      
+      - name: React Native - Install dependencies
+        if: ${{ inputs.framework == 'react-native' }}
+        run: npm install
+      
+      - name: React Native - Build APK
+        if: ${{ inputs.framework == 'react-native' }}
+        run: |
+          cd android
+          chmod +x gradlew
+          ./gradlew assembleRelease
+          cd ..
+      
+      - name: Upload APK
+        uses: actions/upload-artifact@v3
+        with:
+          name: android-apk
+          path: |
+            build/app/outputs/flutter-apk/**/*.apk
+            android/app/build/outputs/apk/release/**/*.apk
+          retention-days: 30
+  
+  build-ios-app:
+    name: Build iOS App
+    runs-on: macos-latest
+    if: ${{ inputs.build_ios }}
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Flutter
+        if: ${{ inputs.framework == 'flutter' }}
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 'stable'
+          cache: true
+      
+      - name: Setup Node.js
+        if: ${{ inputs.framework == 'react-native' }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: Setup Xcode
+        run: |
+          sudo xcode-select -s /Applications/Xcode.app/Contents/Developer
+          sudo xcodebuild -runFirstLaunch
+      
+      - name: Setup Cocoapods
+        run: |
+          sudo gem install cocoapods
+      
+      - name: Flutter - Get dependencies
+        if: ${{ inputs.framework == 'flutter' }}
+        run: flutter pub get
+      
+      - name: Flutter - Build iOS App
+        if: ${{ inputs.framework == 'flutter' }}
+        run: flutter build ios --release --no-codesign
+      
+      - name: React Native - Install dependencies
+        if: ${{ inputs.framework == 'react-native' }}
+        run: npm install
+      
+      - name: React Native - Install pods
+        if: ${{ inputs.framework == 'react-native' }}
+        run: |
+          cd ios
+          pod install
+          cd ..
+      
+      - name: React Native - Build iOS
+        if: ${{ inputs.framework == 'react-native' }}
+        run: |
+          cd ios
+          xcodebuild -workspace RNApp.xcworkspace \
+                     -scheme RNApp \
+                     -configuration Release \
+                     -derivedDataPath build
+          cd ..
+      
+      - name: Upload iOS artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: ios-app
+          path: |
+            build/ios/iphoneos/**/*.app
+            ios/build/Release-iphoneos/**/*.app
+          retention-days: 30
+  
+  build-android-aab:
+    name: Build Android App Bundle
+    runs-on: ubuntu-latest
+    if: ${{ inputs.build_apk }}
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '11'
+      
+      - name: Setup Flutter
+        if: ${{ inputs.framework == 'flutter' }}
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 'stable'
+          cache: true
+      
+      - name: Setup Node.js
+        if: ${{ inputs.framework == 'react-native' }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: Flutter - Get dependencies
+        if: ${{ inputs.framework == 'flutter' }}
+        run: flutter pub get
+      
+      - name: Flutter - Build App Bundle
+        if: ${{ inputs.framework == 'flutter' }}
+        run: flutter build appbundle --release
+      
+      - name: React Native - Install dependencies
+        if: ${{ inputs.framework == 'react-native' }}
+        run: npm install
+      
+      - name: React Native - Build App Bundle
+        if: ${{ inputs.framework == 'react-native' }}
+        run: |
+          cd android
+          chmod +x gradlew
+          ./gradlew bundleRelease
+          cd ..
+      
+      - name: Upload App Bundle
+        uses: actions/upload-artifact@v3
+        with:
+          name: android-aab
+          path: |
+            build/app/outputs/bundle/release/**/*.aab
+            android/app/build/outputs/bundle/release/**/*.aab
+          retention-days: 30
+  
+  create-release:
+    name: Create Release
+    needs: [build-android-apk, build-ios-app, build-android-aab]
+    runs-on: ubuntu-latest
+    if: always()
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Download artifacts
+        uses: actions/download-artifact@v3
+      
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            android-apk/**
+            ios-app/**
+            android-aab/**
+          tag_name: v${{ inputs.version }}
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

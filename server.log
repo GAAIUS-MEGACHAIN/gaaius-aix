@@ -1,0 +1,128 @@
+INFO:     127.0.0.1:57863 - "GET /api/build/templates HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57864 - "GET /api/build/templates HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57865 - "GET /api/build/templates HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57866 - "POST /api/build/blueprint HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57867 - "POST /api/build/blueprint HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57868 - "POST /api/build/blueprint HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57869 - "POST /api/build/blueprint HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57870 - "POST /api/build/blueprint HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57871 - "POST /api/build/generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57879 - "POST /api/build/generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57887 - "POST /api/build/generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57893 - "POST /api/build/generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57909 - "POST /api/build/generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57922 - "POST /api/build/generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57937 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57938 - "GET /api/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57939 - "GET /api/build/runtime-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57940 - "GET /api/build/runtime-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57942 - "GET /api/build/runtime-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57943 - "GET /api/build/runtime-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57944 - "GET /api/build/runtime-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57945 - "POST /api/build/generate-runtime HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57946 - "POST /api/auth/register HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:57996 - "POST /api/auth/login HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:58042 - "POST /api/auth/register HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:58086 - "POST /api/auth/login HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:58131 - "POST /api/auth/register HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:58172 - "POST /api/auth/login HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:58235 - "POST /api/auth/register HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:58294 - "POST /api/auth/login HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:58358 - "POST /api/auth/register HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:58425 - "POST /api/auth/login HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:58497 - "POST /api/auth/register HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:58573 - "POST /api/auth/login HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:58664 - "POST /api/auth/register HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:58742 - "POST /api/auth/login HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:58817 - "POST /api/auth/register HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:59111 - "POST /api/auth/login HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:59385 - "POST /api/build/runtime-modify HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:59388 - "POST /api/auth/login HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:59474 - "POST /api/auth/register HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:59552 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59553 - "GET /api/build/runtime-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59554 - "GET /api/build/runtime-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59555 - "GET /api/build/runtime-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59556 - "GET /api/build/runtime-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59557 - "GET /api/build/runtime-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59558 - "GET /api/build/runtime-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59559 - "GET /api/build/runtime-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59560 - "GET /api/build/runtime-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59561 - "GET /api/build/stages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59562 - "GET /api/build/stages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59563 - "GET /api/build/stages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59564 - "GET /api/build/stages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59565 - "GET /api/build/stages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59566 - "GET /api/build/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59567 - "GET /api/build/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59568 - "GET /api/build/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59569 - "GET /api/build/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59570 - "GET /api/build/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59571 - "POST /api/build/staged-generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59572 - "POST /api/build/generate-runtime HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59585 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60633 - "GET /api/build/templates HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60634 - "GET /api/build/templates HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60635 - "GET /api/build/templates HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60636 - "POST /api/build/blueprint HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60637 - "POST /api/build/blueprint HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60638 - "POST /api/build/blueprint HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60639 - "POST /api/build/blueprint HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60640 - "POST /api/build/blueprint HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60641 - "POST /api/build/generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60660 - "POST /api/build/generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60673 - "POST /api/build/generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60688 - "POST /api/build/generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60727 - "POST /api/build/generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60766 - "POST /api/build/generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60856 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60857 - "GET /api/ HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60858 - "GET /api/build/runtime-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60859 - "GET /api/build/runtime-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60862 - "GET /api/build/runtime-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60863 - "GET /api/build/runtime-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60864 - "GET /api/build/runtime-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60865 - "POST /api/build/generate-runtime HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60866 - "POST /api/auth/register HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:60943 - "POST /api/auth/login HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:61017 - "POST /api/auth/register HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:61095 - "POST /api/auth/login HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:61163 - "POST /api/auth/register HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:61242 - "POST /api/auth/login HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:61314 - "POST /api/auth/register HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:61396 - "POST /api/auth/login HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:61472 - "POST /api/auth/register HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:61557 - "POST /api/auth/login HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:61638 - "POST /api/auth/register HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:61724 - "POST /api/auth/login HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:61798 - "POST /api/auth/register HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:61865 - "POST /api/auth/login HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:61937 - "POST /api/auth/register HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:62017 - "POST /api/auth/login HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:62093 - "POST /api/build/runtime-modify HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:62097 - "POST /api/auth/login HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:62183 - "POST /api/auth/register HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:62250 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62251 - "GET /api/build/runtime-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62252 - "GET /api/build/runtime-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62253 - "GET /api/build/runtime-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62254 - "GET /api/build/runtime-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62255 - "GET /api/build/runtime-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62256 - "GET /api/build/runtime-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62257 - "GET /api/build/runtime-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62258 - "GET /api/build/runtime-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62259 - "GET /api/build/stages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62260 - "GET /api/build/stages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62261 - "GET /api/build/stages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62262 - "GET /api/build/stages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62263 - "GET /api/build/stages HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62264 - "GET /api/build/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62265 - "GET /api/build/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62266 - "GET /api/build/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62267 - "GET /api/build/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62268 - "GET /api/build/agents HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62269 - "POST /api/build/staged-generate HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62270 - "POST /api/build/generate-runtime HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62278 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62496 - "GET /api/build/runtime-status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62875 - "GET /api/build/runtime-status HTTP/1.1" 200 OK

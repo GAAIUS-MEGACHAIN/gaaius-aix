@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "recharts": "^3.7.0",
+    "styled-components": "^6.3.9"
+  }
+}

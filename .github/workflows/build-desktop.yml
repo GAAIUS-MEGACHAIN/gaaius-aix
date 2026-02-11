@@ -1,0 +1,196 @@
+name: Build Desktop Applications
+
+on:
+  workflow_dispatch:
+    inputs:
+      project_name:
+        description: 'Project name'
+        required: true
+      framework:
+        description: 'Framework (tauri, electron)'
+        required: true
+        default: 'tauri'
+        type: choice
+        options:
+          - tauri
+          - electron
+      version:
+        description: 'Version to build'
+        required: true
+        default: '1.0.0'
+      include_windows:
+        description: 'Build Windows EXE'
+        required: true
+        default: true
+        type: boolean
+      include_macos:
+        description: 'Build macOS DMG'
+        required: true
+        default: true
+        type: boolean
+      include_linux:
+        description: 'Build Linux AppImage'
+        required: true
+        default: true
+        type: boolean
+
+jobs:
+  build-windows:
+    name: Build Windows EXE
+    runs-on: windows-latest
+    if: ${{ inputs.include_windows }}
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: Setup Rust
+        if: ${{ inputs.framework == 'tauri' }}
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          components: rustfmt, clippy
+      
+      - name: Install dependencies
+        run: npm install
+      
+      - name: Build for Windows
+        if: ${{ inputs.framework == 'tauri' }}
+        run: npm run tauri build -- --target x86_64-pc-windows-msvc
+      
+      - name: Build Electron for Windows
+        if: ${{ inputs.framework == 'electron' }}
+        run: |
+          npm run build
+          npm run electron-builder -- --win --publish=never
+      
+      - name: Find artifacts
+        id: artifacts
+        run: |
+          $files = Get-ChildItem -Path "dist" -Recurse -Include "*.exe", "*.msi" -ErrorAction SilentlyContinue
+          foreach ($file in $files) {
+            Write-Output "artifact=$($file.FullName)" >> $env:GITHUB_OUTPUT
+          }
+      
+      - name: Upload Windows artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: windows-exe
+          path: dist/**/*.exe
+          retention-days: 30
+  
+  build-macos:
+    name: Build macOS DMG
+    runs-on: macos-latest
+    if: ${{ inputs.include_macos }}
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: Setup Rust
+        if: ${{ inputs.framework == 'tauri' }}
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          targets: x86_64-apple-darwin, aarch64-apple-darwin
+      
+      - name: Install dependencies
+        run: npm install
+      
+      - name: Build for macOS (universal)
+        if: ${{ inputs.framework == 'tauri' }}
+        run: npm run tauri build -- --target universal-apple-darwin
+      
+      - name: Build Electron for macOS
+        if: ${{ inputs.framework == 'electron' }}
+        run: |
+          npm run build
+          npm run electron-builder -- --mac --publish=never
+      
+      - name: Upload macOS artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: macos-dmg
+          path: dist/**/*.dmg
+          retention-days: 30
+  
+  build-linux:
+    name: Build Linux AppImage
+    runs-on: ubuntu-latest
+    if: ${{ inputs.include_linux }}
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: Setup Rust
+        if: ${{ inputs.framework == 'tauri' }}
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+      
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libssl-dev libglib2.0-0 libxcb-render0 libxcb-shape0 libxcb-xfixes0
+      
+      - name: Install Node dependencies
+        run: npm install
+      
+      - name: Build for Linux
+        if: ${{ inputs.framework == 'tauri' }}
+        run: npm run tauri build -- --target x86_64-unknown-linux-gnu
+      
+      - name: Build Electron for Linux
+        if: ${{ inputs.framework == 'electron' }}
+        run: |
+          npm run build
+          npm run electron-builder -- --linux --publish=never
+      
+      - name: Upload Linux artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: linux-appimage
+          path: dist/**/*.AppImage
+          retention-days: 30
+  
+  release:
+    name: Create Release
+    needs: [build-windows, build-macos, build-linux]
+    runs-on: ubuntu-latest
+    if: always()
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Download artifacts
+        uses: actions/download-artifact@v3
+      
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            windows-exe/**
+            macos-dmg/**
+            linux-appimage/**
+          tag_name: v${{ inputs.version }}
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

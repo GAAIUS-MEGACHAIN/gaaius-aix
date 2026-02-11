@@ -1,0 +1,133 @@
+# ⚡ QUICK REFERENCE - WHAT'S HAPPENING
+
+## RIGHT NOW
+
+```
+🟢 MongoDB         Running on port 27017 ✅
+🟡 Backend (Port 8000) Starting up
+🟡 Frontend npm    Installing (in progress)
+```
+
+---
+
+## SIMPLE ANSWER
+
+**Your Question:** "I see website in SimpleVSCode but not localhost:3000"
+
+**Answer:** 
+- SimpleVSCode = Preview only
+- localhost:3000 = Needs real dev server
+- Dev server needs npm install to finish
+- npm install = Still running (downloading 50+ packages)
+- When done: npm start will run → localhost:3000 will work
+
+**Timeline:** Wait ~10-20 more minutes ⏳
+
+---
+
+## WHAT TO DO
+
+1. **Keep terminals open** - Don't close them!
+2. **Wait 10-20 minutes** - npm install finishing
+3. **Watch for message**: "added XXX packages"
+4. **Then see**: "Compiled successfully!"
+5. **Then open**: http://localhost:3000
+
+---
+
+## TERMINAL OUTPUTS TO EXPECT
+
+### Frontend (npm install in progress)
+```
+npm info cli v10.x.x
+...downloading packages...
+added 487 packages in 245 seconds
+```
+When you see "added XXX packages" → Move to next step
+
+### Frontend (after npm starts automatically)
+```
+Compiled successfully!
+You can now view frontend in the browser at:
+http://localhost:3000
+```
+When you see this → npm start successful → You can access the app!
+
+### Backend (should be starting)
+```
+Uvicorn running on http://0.0.0.0:8000
+Application startup complete
+```
+This should show in backend terminal when ready
+
+---
+
+## URLS WHEN READY
+
+| What | URL |
+|------|-----|
+| Main App | http://localhost:3000 |
+| API Docs | http://localhost:8000/docs |
+| API Base | http://localhost:8000 |
+
+---
+
+## ESTIMATED TIME
+
+- **npm install**: 5-20 min (currently running)
+- **npm start**: 30-60 sec (after install)
+- **React compile**: <10 sec (automatic)
+- **App ready**: Then you can open browser
+- **Total**: ~15-25 minutes
+
+---
+
+## YOU ARE HERE
+
+```
+npm install downloading...
+        ↓ (WAIT 10-20 MIN)
+npm install complete ← ← ← ← YOU ARE HERE
+        ↓ (automatic)
+npm start running
+        ↓ (automatic)
+React compiled successfully!
+        ↓ (then you do)
+Open http://localhost:3000
+        ↓
+Full GAAIUS AI Platform running! 🎉
+```
+
+---
+
+## KEEP THESE RUNNING
+
+✅ MongoDB container (docker)
+✅ Backend server (uvicorn)
+✅ Frontend npm install (in terminal)
+
+Don't close any of these!
+
+---
+
+## DO NOT
+
+❌ Close terminal windows
+❌ Press Ctrl+C
+❌ Restart computer
+❌ Try to use localhost:3000 yet
+
+---
+
+## Summary
+
+**SimpleVSCode working = YES** ✅  
+**localhost:3000 working = NOT YET** ❌  
+**Why = npm install still running** 🟡  
+**When will it work = 10-20 minutes** ⏳  
+**What to do = WAIT and be patient** ☕  
+
+---
+
+**Come back in 15 minutes and try http://localhost:3000!** 🚀
+
